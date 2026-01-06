@@ -1,0 +1,206 @@
+[
+  {
+    "id": "91992bbd4758bdcf9c9b01",
+    "name": "Adam",
+    "gender": "male",
+    "description": "",
+    "styles": [
+      "neutral"
+    ]
+  },
+  {
+    "id": "e5f6fb1a53d0add87afb4f",
+    "name": "Agatha",
+    "gender": "female",
+    "description": "",
+    "styles": [
+      "happy",
+      "neutral",
+      "serene"
+    ]
+  },
+  {
+    "id": "2d5a380030e78fcab0c82a",
+    "name": "Aiden",
+    "gender": "male",
+    "description": "Aiden, the youngest pilot, embodies a rare blend of prideful innocence and surprisingly mature demeanor. Despite his tender age, he navigates the virtual skies with confidence and clarity, occasionally expressing his emotions through a complaining tone. Riding a small airplane, he adds a dash of adventurous spirit to the captivating journey of travelers.",
+    "styles": [
+      "angry",
+      "curious",
+      "happy",
+      "neutral",
+      "sad",
+      "suspicious",
+      "triumphant"
+    ]
+  },
+  {
+    "id": "ac449f240c2732b7f0b8bb",
+    "name": "Aiko",
+    "gender": "female",
+    "description": "",
+    "styles": [
+      "neutral"
+    ]
+  },
+  {
+    "id": "d9411052b13cba9cb4c313",
+    "name": "Allen",
+    "gender": "male",
+    "description": "",
+    "styles": [
+      "angry",
+      "annoyed",
+      "happy",
+      "kind",
+      "neutral",
+      "sad"
+    ]
+  },
+  {
+    "id": "c3c0898fd41489a8e8919c",
+    "name": "Alphonse",
+    "gender": "male",
+    "description": "Alphonse is a gentle and affectionate old man. He's familiar and informal.",
+    "styles": [
+      "admiring",
+      "admiring +",
+      "angry",
+      "angry +",
+      "anxious",
+      "anxious +",
+      "happy",
+      "happy +",
+      "neutral",
+      "sad",
+      "sad +"
+    ]
+  },
+  {
+    "id": "451e6fa92768affdcced52",
+    "name": "Amantha",
+    "gender": "female",
+    "description": "",
+    "styles": [
+      "angry",
+      "disgusted",
+      "happy",
+      "neutral",
+      "sad",
+      "surprised"
+    ]
+  },
+  {
+    "id": "4653d63d07d5340656b6bc",
+    "name": "Andrew",
+    "gender": "male",
+    "description": "",
+    "styles": [
+      "angry",
+      "curious",
+      "happy",
+      "neutral",
+      "sad",
+      "shy"
+    ]
+  },
+  {
+    "id": "ead6b9de6beb66dc8f6d2d",
+    "name": "Andy",
+    "gender": "male",
+    "description": "",
+    "styles": [
+      "angry",
+      "friendly",
+      "happy",
+      "neutral",
+      "sad",
+      "shy"
+    ]
+  },
+  {
+    "id": "259d4ac1ecf560c0f76e08",
+    "name": "Anna",
+    "gender": "female",
+    "description": "Anna is a kind and gentle. She has a cute and lovely tone with a high voice.",
+    "styles": [
+      "angry",
+      "angry +",
+      "embarrassed",
+      "embarrassed +",
+      "happy",
+      "happy +",
+      "neutral",
+      "neutral +",
+      "painful",
+      "painful +",
+      "sad",
+      "sad +"
+    ]
+  },
+  {
+    "id": "7c56c6a6471a12816604f0",
+    "name": "Ariel",
+    "gender": "female",
+    "description": "",
+    "styles": [
+      "angry",
+      "happy",
+      "neutral",
+      "sad",
+      "shy"
+    ]
+  },
+  {
+    "id": "941fd27c5b0cb6a6f1e7c3",
+    "name": "Arin",
+    "gender": "female",
+    "description": "Arin is a girl with a shy demeanor and a deep affinity for magic. She possesses a quiet strength, despite her introverted nature. Arin finds solace in magic and possesses a rich inner world of creativity and curiosity. While trying to be gentle and kind-hearted, she struggles to express herself fully.",
+    "styles": [
+      "angry",
+      "happy",
+      "neutral",
+      "sad",
+      "shy",
+      "sleepy",
+      "suspicious"
+    ]
+  },
+  {
+    "id": "1f6b70f879da125bfec245",
+    "name": "Audrey",
+    "gender": "female",
+    "description": "",
+    "styles": [
+      "angry",
+      "confident",
+      "happy",
+      "neutral",
+      "sad",
+      "unfriendly"
+    ]
+  },
+  {
+    "id": "2cd6c38c7087106be21888",
+    "name": "Aya",
+    "gender": "female",
+    "description": "",
+    "styles": [
+      "neutral"
+    ]
+  },
+  {
+    "id": "52dc253df44d06aa7f0867",
+    "name": "Bella",
+    "gender": "female",
+    "description": "",
+    "styles": [
+      "angry",
+      "disgusted",
+      "happy",
+      "kind",
+      "neutral",
+      "sad"
+    ]
+  }
+]
