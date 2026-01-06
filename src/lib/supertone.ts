@@ -78,11 +78,13 @@ export interface SupertoneTTSOptions {
     speed?: number;     // 0.5 to 2.0
 }
 
+import os from 'os';
+
 /**
  * Ensure the temp directory exists
  */
 export function ensureTempDir(): string {
-    const tempDir = path.join(process.cwd(), 'public', 'temp');
+    const tempDir = os.tmpdir(); // Use system temp dir for Vercel compatibility
     if (!fs.existsSync(tempDir)) {
         fs.mkdirSync(tempDir, { recursive: true });
     }
@@ -138,7 +140,7 @@ export async function generateSupertone(options: SupertoneTTSOptions): Promise<s
 
         fs.writeFileSync(filePath, Buffer.from(audioBuffer));
 
-        return `/temp/${fileName}`;
+        return `/api/audio?file=${fileName}`;
     } catch (error) {
         console.error('Supertone TTS error:', error);
         // 에러를 그대로 전파하여 상위에서 처리하도록 함 (mock으로 떨어지지 않게)
@@ -165,7 +167,7 @@ async function generateMockTTS(): Promise<string> {
         console.log('Mock TTS: No sample file found. Created empty placeholder.');
     }
 
-    return `/temp/${fileName}`;
+    return `/api/audio?file=${fileName}`;
 }
 
 /**

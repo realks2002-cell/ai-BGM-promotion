@@ -74,11 +74,13 @@ export interface TTSOptions {
     settings: VoiceSettings;
 }
 
+import os from 'os';
+
 /**
  * Ensure the temp directory exists
  */
 export function ensureTempDir(): string {
-    const tempDir = path.join(process.cwd(), 'public', 'temp');
+    const tempDir = os.tmpdir(); // Use system temp dir for Vercel compatibility
     if (!fs.existsSync(tempDir)) {
         fs.mkdirSync(tempDir, { recursive: true });
     }
@@ -190,7 +192,7 @@ export async function generateTTS(options: TTSOptions): Promise<string> {
 
         fs.writeFileSync(filePath, Buffer.from(audioBuffer));
 
-        return `/temp/${fileName}`;
+        return `/api/audio?file=${fileName}`;
     } catch (error) {
         console.error('ElevenLabs TTS error:', error);
         throw new Error('TTS 생성에 실패했습니다. API 키와 성우 ID를 확인해주세요.');
@@ -215,7 +217,7 @@ async function generateMockTTS(): Promise<string> {
         console.log('Mock TTS: No sample file found. Created empty placeholder.');
     }
 
-    return `/temp/${fileName}`;
+    return `/api/audio?file=${fileName}`;
 }
 
 /**

@@ -2,8 +2,10 @@ import { spawn, ChildProcess } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 
-// Use system FFmpeg directly
-const FFMPEG_PATH = 'ffmpeg';
+// Use ffmpeg-static for portable binary
+const ffmpegStatic = require('ffmpeg-static');
+
+const FFMPEG_PATH = ffmpegStatic || 'ffmpeg';
 const FFPROBE_PATH = 'ffprobe';
 
 export interface SynthesizeOptions {
@@ -155,11 +157,13 @@ export async function synthesizeAudio(options: SynthesizeOptions): Promise<strin
     });
 }
 
+import os from 'os';
+
 /**
  * Ensure the temp directory exists
  */
 export function ensureTempDir(): string {
-    const tempDir = path.join(process.cwd(), 'public', 'temp');
+    const tempDir = os.tmpdir();
     if (!fs.existsSync(tempDir)) {
         fs.mkdirSync(tempDir, { recursive: true });
     }
@@ -170,7 +174,7 @@ export function ensureTempDir(): string {
  * Clean up old temp files (older than 1 hour)
  */
 export function cleanupTempFiles(): void {
-    const tempDir = path.join(process.cwd(), 'public', 'temp');
+    const tempDir = os.tmpdir();
     if (!fs.existsSync(tempDir)) return;
 
     const files = fs.readdirSync(tempDir);
