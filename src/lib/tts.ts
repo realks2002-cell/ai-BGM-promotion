@@ -80,7 +80,10 @@ import os from 'os';
  * Ensure the temp directory exists
  */
 export function ensureTempDir(): string {
-    const tempDir = os.tmpdir(); // Use system temp dir for Vercel compatibility
+    let tempDir = os.tmpdir();
+    if (process.env.VERCEL || process.env.AWS_REGION || process.env.NODE_ENV === 'production') {
+        tempDir = '/tmp';
+    }
     if (!fs.existsSync(tempDir)) {
         fs.mkdirSync(tempDir, { recursive: true });
     }

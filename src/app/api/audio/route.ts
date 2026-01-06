@@ -13,7 +13,14 @@ export async function GET(request: NextRequest) {
 
     // Security: Prevent directory traversal
     const cleanFilename = path.basename(filename);
-    const filePath = path.join(os.tmpdir(), cleanFilename);
+
+    // Use consistent temp directory logic (force /tmp on Vercel)
+    let tempDir = os.tmpdir();
+    if (process.env.VERCEL || process.env.AWS_REGION || process.env.NODE_ENV === 'production') {
+        tempDir = '/tmp';
+    }
+
+    const filePath = path.join(tempDir, cleanFilename);
 
     if (!fs.existsSync(filePath)) {
         return new NextResponse('File not found', { status: 404 });

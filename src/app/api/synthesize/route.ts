@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { synthesizeAudio } from '@/lib/ffmpeg';
+import { synthesizeAudio, ensureTempDir } from '@/lib/ffmpeg';
 import { supabase } from '@/lib/supabase';
 import fs from 'fs';
 import path from 'path';
@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
         // 1. Resolve TTS Path
         let ttsPath: string;
-        const tempDir = os.tmpdir();
+        const tempDir = ensureTempDir();
 
         // Handle both local static path (/temp/) and API serving route (/api/audio?file=)
         if (ttsUrl.startsWith('/temp/') || ttsUrl.includes('/api/audio')) {
